@@ -58,18 +58,33 @@ public final class Objects {
         return o == null ? 0 : o.hashCode();
     }
 
+// Returns the string representation of the object or a default string if the object is null.
+// @param o the object to be converted to a string
+// @return the string representation of the object or the default string if the object is null
     public static String toString(Object o) {
         return toString(o, "null");
     }
-
+    
+// Returns the string representation of the object or a default string if the object is null.
+// @param o the object to be converted to a string
+// @param nullDefault the default string to return if the object is null
+// @return the string representation of the object or the default string if the object is null
     public static String toString(Object o, String nullDefault) {
         return o != null ? o.toString() : nullDefault;
     }
-
+    
+// Compares two objects using the specified comparator.
+// @param a the first object to be compared
+// @param b the second object to be compared
+// @param c the comparator to compare the objects
+// @return 0 if both objects are null, otherwise the result of the comparison
     public static <T> int compare(T a, T b, Comparator<? super T> c) {
         return a == null && b == null ? 0 : c.compare(a, b);
     }
-
+    
+// Checks that the specified object reference is not null.
+// @param obj the object reference to check for null
+// @return the non-null object reference
     public static <T> T requireNonNull(T obj) {
         return requireNonNull(obj, "");
     }
